@@ -1,13 +1,14 @@
 import NavHome from "./Nav";
-
 import Header from "./Header";
 import Footer from "./Footer";
-
-import { Photo } from "../Data/Data.js";
+import { connect } from "react-redux";
+// import { Photo } from "../Data/Data.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+
 import {
   Button,
+  Input,
   Card,
   CardImg,
   Container,
@@ -16,9 +17,13 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 // console.log(Photo.name);
+
+const mapStateToProps = (state) => ({
+  ...state,
+});
 
 const Renderpic = ({ item, onClick }) => {
   return item.map((e) => {
@@ -97,20 +102,37 @@ const Pic = ({ id, image, name, shot, likes }) => {
   );
 };
 
-const Gallery = () => {
+const Gallery = (props) => {
+  const [searchT, SetsearchT] = useState("");
+  const sphoto = useMemo(() => {
+    var temp = props.photo.filter((e) => {
+      return e.name.toLowerCase().includes(searchT);
+    });
+
+    return temp;
+  }, [searchT]);
+
   return (
     <>
       <NavHome />
       <Header />
-      <Container>
-        <div className="col-12">
-          <div className="row">
-            <Renderpic item={Photo} />
+      <div className="bg-dark">
+        <Container style={{ backgroundColor: "white" }}>
+          <div className="pt-4 px-5">
+            <Input
+              placeholder="Search"
+              onChange={(e) => SetsearchT(e.target.value)}
+            />
           </div>
-        </div>
-      </Container>
+          <div className="col-12">
+            <div className="row">
+              <Renderpic item={sphoto} />
+            </div>
+          </div>
+        </Container>
+      </div>
       <Footer />
     </>
   );
 };
-export default Gallery;
+export default connect(mapStateToProps)(Gallery);

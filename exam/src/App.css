@@ -14,3 +14,6 @@
 .card {
   flex: 0 1 24%;
 }
+body{
+  background-color: black;  
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import Main from "./component/HomeComponent.js";
+import "./App.css";
 import Aboutme from "./component/Aboutme.js";
 import Home from "./component/Home.js";
 import Gallery from "./component/Gallery.js";

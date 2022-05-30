@@ -4,7 +4,7 @@ import "../App.css";
 
 function Footer(props) {
   return (
-    <div className="footer bg-dark">
+    <div className="footer bg-dark pt-4">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-4 offset-1 col-sm-2">

@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <>
       <div className="container">
-        <div className="row mt-2">
+        <div className="row pt-3 pb-2">
           <div className="col-12 col-md-4 ">
             <Card>
               <CardImg

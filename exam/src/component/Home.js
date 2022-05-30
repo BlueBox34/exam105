@@ -50,7 +50,8 @@ const Home = () => {
     <>
       <NavHome />
       <Header />
-      <div className="container">
+
+      <div className="container bg-white">
         <div className="row align-items-start p-5   ">
           <div className=" col-12 col-md m-1">
             <Rendercard item={Photo[0]} />
