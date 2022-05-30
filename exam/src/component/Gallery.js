@@ -48,7 +48,7 @@ const Pic = ({ id, image, name, shot, likes }) => {
     return (
       <>
         <ModalBody>
-          <h3>Amont {like ? likes + 1 : likes}</h3>
+          <h3>Amount Likes {like ? likes + 1 : likes}</h3>
         </ModalBody>
         <ModalFooter>
           <Button
