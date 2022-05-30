@@ -83,7 +83,6 @@ const Aboutme = () => {
     <>
       <NavHome />
       <Header />
-
       <Profile />
       <Footer />
     </>

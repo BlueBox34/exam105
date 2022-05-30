@@ -1,11 +1,11 @@
 import React from "react";
-// import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Navbar,
   NavbarBrand,
   NavbarToggler,
-  NavItem,
   NavLink,
+  NavItem,
   Collapse,
   Nav,
 } from "reactstrap";
@@ -14,26 +14,41 @@ function NavHome() {
   return (
     <div>
       <Navbar pading="5" color="dark" expand="md" light>
-        <NavbarBrand className="text-white" href="/home">
-          Home
+        <NavbarBrand>
+          <Link
+            className="text-white"
+            style={{ textDecoration: "none" }}
+            to="/"
+          >
+            Home
+          </Link>
         </NavbarBrand>
         <NavbarToggler onClick={function noRefCheck() {}} />
         <Collapse navbar>
-          <Nav className="me-auto " navbar>
+          <Nav className="mc-auto " navbar>
             <NavItem>
-              <NavLink className="text-white" href="/Gallery">
-                Photo Gallery
+              <NavLink className="text-white">
+                <Link
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                  to="/Gallery"
+                >
+                  Photo Gallery
+                </Link>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="text-white" href="/Aboutme">
-                About me
+              <NavLink>
+                <Link
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
+                  to="/Aboutme"
+                >
+                  About me
+                </Link>
               </NavLink>
             </NavItem>
           </Nav>
-          <NavLink className="text-white" href="/Aboutme">
-            Photo Gallery
-          </NavLink>
         </Collapse>
       </Navbar>
     </div>
